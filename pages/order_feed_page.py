@@ -66,9 +66,21 @@ class OrderFeedPage(BasePage):
         number = self.get_text_on_element(locator)
         return int(number)
 
-    @allure.step('Получить номер последнего заказа из раздела "В работе"')
-    def get_number_order_in_working_list(self):
-        return self.get_text_on_element(OrderFeedLocators.FIRST_ORDER_IN_WORKING_LIST)
+    @allure.step("Получение списка номеров заказов в ленте заказов")
+    def get_all_order_numbers_feed(self):  # получить весь список заказов в ленте
+        self.wait_for_element(OrderFeedLocators.ORDER_NUMBERS_IN_PROGRESS)
+        elements = self.driver.find_elements(*OrderFeedLocators.ORDER_NUMBERS_IN_PROGRESS)
+        #raw_numbers = self.get_text_on_element(OrderFeedLocators.ORDER_NUMBERS_IN_PROGRESS)
+        cleaned_numbers = []
+        for el in elements:
+            text = el.text.strip()
+            if text.startswith("#"):
+                text = text[1:]  # Удаляем "#"
+            if text:
+                cleaned_numbers.append(text.lstrip('0'))  # удаляем ведущие нули
+
+        return cleaned_numbers
+
 
 
 

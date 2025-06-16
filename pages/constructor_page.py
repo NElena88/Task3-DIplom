@@ -19,7 +19,7 @@ class ConstructorPage(BasePage):
         self.click_on_element(ConstructorPageLocators.BTN_LOGIN_ACCOUNT)
 
     @allure.step('Ожидаем появления заголовка Соберите бургер')
-    def wait_for_header_header_make_burger(self):
+    def wait_for_header_make_burger(self):
         self.wait_for_element(ConstructorPageLocators.HEADER_MAKE_BURGER)
 
     @allure.step('Получаем текст заголовка Соберите бургер')

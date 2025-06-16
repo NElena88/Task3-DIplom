@@ -1,8 +1,8 @@
 
 class Credentials:
-    name='vova'
-    email='vova@mail.ru'
-    password='123456'
+    name='voda'
+    email='voda@mail.ru'
+    password='135790'
 
 timeout = 15
 

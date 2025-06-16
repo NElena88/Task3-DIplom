@@ -14,8 +14,8 @@ class OrderFeedLocators:
 
     ORDER_FEED = (By.XPATH, '//ul[contains(@class, "OrderFeed_orderListReady")]')
     HEADER_IN_WORK = (By.XPATH, '//p[text()="В работе:"]')
-    ORDER_NUMBERS_IN_PROGRESS = (By.XPATH, "//div[contains(@class, 'OrderFeed_orderReadyContainer')]//ul/li/p[contains(@class, 'text_type_digits-default')]")
-
+    ORDER_NUMBERS_IN_PROGRESSS = (By.XPATH, "//div[contains(@class, 'OrderFeed_orderReadyContainer')]//ul/li/p[contains(@class, 'text_type_digits-default')]")
+    ORDER_NUMBERS_IN_PROGRESS = (By.XPATH, "//ul[contains(@class, 'OrderFeed_orderListReady')]/li[contains(@class, 'text_type_digits-default')]")
     FIRST_ORDER_IN_WORKING_LIST = (By.XPATH, './/li[@class="text text_type_digits-default mb-2"]')
     OVERLAY = (By.XPATH, ".//div[contains(@class, 'Modal_modal_overlay__x2ZCr')]/parent::div")
     HEADER_ID_ORDER = (By.XPATH, '//p[text()="идентификатор заказа"]')
