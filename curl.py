@@ -10,8 +10,9 @@ class MainUrl:
 
 class Endpoints:
 
-    CREATE_USER = 'api/auth/register'
-    LOGIN = 'api/auth/login'
-    DELETE_USER = 'api/auth/user'
-    CREATE_ORDER = 'api/orders'
-    GET_ORDERS = 'api/orders'
+    CREATE_USER = f'{MainUrl.api_base}/auth/register'
+    LOGIN = f'{MainUrl.api_base}/auth/login'
+    DELETE_USER = f'{MainUrl.api_base}/auth/user'
+    CREATE_ORDER = f'{MainUrl.api_base}/orders'
+    GET_ORDERS = f'{MainUrl.api_base}/orders'
+

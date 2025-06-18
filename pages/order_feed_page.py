@@ -70,7 +70,6 @@ class OrderFeedPage(BasePage):
     def get_all_order_numbers_feed(self):  # получить весь список заказов в ленте
         self.wait_for_element(OrderFeedLocators.ORDER_NUMBERS_IN_PROGRESS)
         elements = self.driver.find_elements(*OrderFeedLocators.ORDER_NUMBERS_IN_PROGRESS)
-        #raw_numbers = self.get_text_on_element(OrderFeedLocators.ORDER_NUMBERS_IN_PROGRESS)
         cleaned_numbers = []
         for el in elements:
             text = el.text.strip()

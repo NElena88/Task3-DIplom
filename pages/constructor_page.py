@@ -49,14 +49,15 @@ class ConstructorPage(BasePage):
 
     @allure.step('Перетащить булки в конструктор')
     def drag_bun_to_constructor(self):
-        source_bun = self.driver.find_element(*ConstructorPageLocators.INGR_BUN)
-        target_bun = self.driver.find_element(*ConstructorPageLocators.CONSTRUCTOR)
+        source_bun = self.find_element(ConstructorPageLocators.INGR_BUN)
+        target_bun = self.find_element(ConstructorPageLocators.CONSTRUCTOR)
         self.drag_and_drop_element(source_bun, target_bun)
+
 
     @allure.step('Перетащить соус в конструктор')
     def drag_sauce_to_constructor(self):
-        source_sauce = self.driver.find_element(*ConstructorPageLocators.INGR_SAUCE)
-        target_sauce = self.driver.find_element(*ConstructorPageLocators.CONSTRUCTOR)
+        source_sauce = self.find_element(ConstructorPageLocators.INGR_SAUCE)
+        target_sauce = self.find_element(ConstructorPageLocators.CONSTRUCTOR)
         self.drag_and_drop_element(source_sauce, target_sauce)
 
     @allure.step('Ожидаем появления ингредиента Соус в конструкторе')

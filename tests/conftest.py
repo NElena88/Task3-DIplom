@@ -22,7 +22,7 @@ def driver(request):
     elif request.param == "firefox":
         service = FirefoxService(GeckoDriverManager().install())
         driver = webdriver.Firefox(service=service)
-        driver.set_window_size(1200, 720)
+        driver.set_window_size(1280, 720)
         driver.get(MainUrl.main_site)
     yield driver
     driver.quit()
@@ -36,18 +36,3 @@ def login(driver):
     auth_page.auth(Credentials.email,Credentials.password)
 
     return driver
-
-@pytest.fixture
-def auth_page(driver):
-    return AuthPage(driver)
-
-@pytest.fixture
-def constructor_page(driver):
-    constructor_page = ConstructorPage(driver)
-    return constructor_page
-
-@pytest.fixture
-def order_feed_page(driver):
-    order_feed_page = OrderFeedPage(driver)
-    return order_feed_page
-

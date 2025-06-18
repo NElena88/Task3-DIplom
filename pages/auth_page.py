@@ -68,12 +68,11 @@ class AuthPage(BasePage):
         self.click_on_element(AuthPageLocators.BTN_PERSONAL_ACCOUNT)
 
     @allure.step("Создание и авторизация уникального пользователя")
-    def create_user_and_auth(self):
+    def create_user_and_auth(self, personal_data):
         self.main_page_loading_wait() # ждем загрузки главной страницы
         self.click_on_button_login_account_on_main_page() # нажимаем Войти в аккаунт
         self.click_on_button_register_new_account() # переходим к регистрации пользователя
         self.wait_visibility_header_register() # ждем заголовка Регистрация
-        personal_data = generate_personal_data() # генерируем уникальные данные пользователя
         self.fill_form_data_register(personal_data) # заполняем форму регистрации
         self.click_submit_register() # надимаем кнопку Зарегистрироваться
         self.wait_visibility_header_entrance() # ждем появления заголовка Вход

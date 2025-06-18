@@ -2,6 +2,7 @@ import allure
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from seletools.actions import drag_and_drop
+from selenium.webdriver import ActionChains
 
 
 class BasePage:
@@ -72,3 +73,7 @@ class BasePage:
     @allure.step('Перетащить элемент в корзину')
     def drag_and_drop_element(self, source, target):
         drag_and_drop(self.driver, source, target)
+
+    @allure.step('Найти элемент')
+    def find_element(self, locator, timeout=None):
+        return self.wait_for_element(locator, timeout) if timeout else self.driver.find_element(*locator)
